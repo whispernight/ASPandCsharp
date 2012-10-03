@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cheese" Class="CheeseDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=brookfield.rice.iit.edu,8081;Initial Catalog=cheese;Persist Security Info=True;User ID=student" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="cheeseConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cheese" Member="Cheeses">
+    <Type Name="Cheese">
+      <Column Name="CheeseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CheeseName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CheeseDescription" Type="System.String" DbType="VarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="ConsistancyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MilkID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Region_Cheese" Member="Region" ThisKey="RegionID" OtherKey="RegionID" Type="Region" IsForeignKey="true" />
+      <Association Name="Consistency_Cheese" Member="Consistency" ThisKey="ConsistancyID" OtherKey="ConsistencyID" Type="Consistency" IsForeignKey="true" />
+      <Association Name="Milk_Cheese" Member="Milk" ThisKey="MilkID" OtherKey="MilkID" Type="Milk" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Region" Member="Regions">
+    <Type Name="Region">
+      <Column Name="RegionID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Region_Cheese" Member="Cheeses" ThisKey="RegionID" OtherKey="RegionID" Type="Cheese" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Consistency" Member="Consistencies">
+    <Type Name="Consistency">
+      <Column Name="ConsistencyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ConsistencyDesc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Consistency_Cheese" Member="Cheeses" ThisKey="ConsistencyID" OtherKey="ConsistancyID" Type="Cheese" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Milk" Member="Milks">
+    <Type Name="Milk">
+      <Column Name="MilkID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MilkType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Milk_Cheese" Member="Cheeses" ThisKey="MilkID" OtherKey="MilkID" Type="Cheese" />
+    </Type>
+  </Table>
+</Database>

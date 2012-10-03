@@ -1,0 +1,49 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:TextBox runat="server"
+    BackColor="#4b6c9e"
+    BorderColor="#4e667d"
+    BorderStyle="Solid"
+    BorderWidth="1px"
+    Font-Names="Tahoma, Verdana, Arial"/>
+<asp:Button runat="server"
+    BackColor="#C04000"
+    BorderColor="Maroon"
+    BorderStyle="Solid"
+    BorderWidth="2px"
+    Font-Names="Tahoma,Verdana,Arial"
+    Font-Size="Smaller"
+    ForeColor="#FFFFC0"
+    Text="go"
+    SkinID="goButton"
+    Width="95px"/>
+ <asp:GridView runat="server" CellPadding="4" ForeColor="#FFFFFF" GridLines="None">
+            <HeaderStyle BackColor="#465c71" Font-Bold="True" ForeColor="White" BorderColor="#4e667d" BorderStyle="Solid" BorderWidth="1px"/>
+            <FooterStyle BackColor="#465c71" Font-Bold="True" ForeColor="White" />
+            <RowStyle BackColor="#80a3b7" /> 
+            <AlternatingRowStyle BackColor="#94b3c4" />
+            <EditRowStyle BackColor="#3a4f63" />
+            <SelectedRowStyle BackColor="#123790" Font-Bold="True" ForeColor="white" BorderColor="black" BorderStyle="Solid" />
+            <PagerStyle BackColor="#00939f" ForeColor="White" HorizontalAlign="Center" />
+ </asp:GridView>
+ <asp:DetailsView runat="server" CellPadding="4" ForeColor="#FFFFFF" GridLines="None">
+            <HeaderStyle BackColor="#465c71" Font-Bold="True" ForeColor="White" BorderColor="#4e667d" BorderStyle="Solid" BorderWidth="1px"/>
+            <FooterStyle BackColor="#465c71" Font-Bold="True" ForeColor="White" />
+            <RowStyle BackColor="#80a3b7" /> 
+            <AlternatingRowStyle BackColor="#94b3c4" />
+            <EditRowStyle BackColor="#3a4f63" />
+            <PagerStyle BackColor="#00939f" ForeColor="White" HorizontalAlign="Center" />
+ </asp:DetailsView>

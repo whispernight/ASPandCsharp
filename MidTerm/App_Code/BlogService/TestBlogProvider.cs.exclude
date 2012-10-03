@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+
+namespace IITCourse.Blog
+{
+    /// <summary>
+    /// Summary description for TestBlogProvider
+    /// </summary>
+    public class TestBlogProvider : BlogProvider
+    {
+
+        public TestBlogProvider()
+        {
+            //
+            // TODO: Add constructor logic here
+            //
+            Console.WriteLine("Hello!!!");
+        }
+
+        public override bool CanAnonPostReply
+        {
+            get { return false; }
+        }
+
+        public override Blog GetBlog(int BlogID)
+        {
+            return GetSingleFakeBlog(BlogID);
+        }
+
+        private Blog GetSingleFakeBlog(int BlogID)
+        {
+            return new Blog
+            {
+                Author = "Test Author" + BlogID,
+                Description = "Test Blog",
+                Mood = "Happy"
+            };
+        }
+
+        public override List<Blog> GetBlogs()
+        {
+            return GetTenTestBlogs();
+        }
+
+        public override List<Blog> GetUserBlogs(MembershipUser User)
+        {
+            //return GetTenTestBlogs();
+            throw new NotImplementedException();
+        }
+
+        public override void AddBlog(Blog blog)
+        {
+            var BlogList = new List<Blog>();
+            BlogList.Add(blog);
+        }
+
+        public override void UpdateBlog(Blog blog)
+        {
+            var BlogList = new List<Blog>();
+            BlogList.Add(blog);
+        }
+
+        public override void DeleteBlog(Blog blog)
+        {
+            var BlogList = new List<Blog>();
+            BlogList.Remove(blog);
+        }
+
+        private List<Blog> GetTenTestBlogs()
+        {
+
+            List<Blog> blogs = new List<Blog>();
+            for (int i = 0; i < 10; i++)
+            {
+                blogs.Add(GetSingleFakeBlog(i));
+            }
+            return blogs;
+        }
+
+        public override List<Blog> GetSelectedUserBlogs(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<string> GetNamesOfAllUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void PostBlogResponse(BlogResponse blogResponse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool DeleteBlogResponse(BlogResponse blogResponse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<BlogResponse> GetBlogResponses(int blogId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override BlogResponse GetBlogResponse(int blogResponseId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+    }
+}
+ 

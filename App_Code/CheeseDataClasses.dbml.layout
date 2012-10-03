@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CheeseDataClasses">
+  <DataContextMoniker Name="/CheeseDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c20b402b-3a01-4755-b11d-3010a5b89468" absoluteBounds="5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CheeseDataClassesDataContext/Cheese" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94dc56de-34c6-4c2f-b567-eba53bd8c914" absoluteBounds="5.015, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c003558c-23f8-4466-be1e-a8ec86ab5316" absoluteBounds="5.25, 4.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CheeseDataClassesDataContext/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b94a01a-cc3c-4223-9409-911e63ba3f5c" absoluteBounds="5.265, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.02343875 : 4.5); (6.02343875 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CheeseDataClassesDataContext/Region/Region_Cheese" />
+      <nodes>
+        <classShapeMoniker Id="c003558c-23f8-4466-be1e-a8ec86ab5316" />
+        <classShapeMoniker Id="c20b402b-3a01-4755-b11d-3010a5b89468" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1d0dc20c-d369-4867-8fcb-b358a13d3cfe" absoluteBounds="2.5, 2.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CheeseDataClassesDataContext/Consistency" />
+      <nestedChildShapes>
+        <elementListCompartment Id="259789bf-424e-4344-807b-68ce928cf45b" absoluteBounds="2.5149999999999997, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 2.75); (3.5 : 1.8124995); (5 : 1.8124995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CheeseDataClassesDataContext/Consistency/Consistency_Cheese" />
+      <nodes>
+        <classShapeMoniker Id="1d0dc20c-d369-4867-8fcb-b358a13d3cfe" />
+        <classShapeMoniker Id="c20b402b-3a01-4755-b11d-3010a5b89468" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="11659855-6107-4984-bf52-688b1e444d33" absoluteBounds="7.75, 3.125, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CheeseDataClassesDataContext/Milk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19532701-143a-4c7f-982d-4bbd1a353bce" absoluteBounds="7.765, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 3.72199625651042); (6.9218775 : 3.72199625651042); (6.9218775 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CheeseDataClassesDataContext/Milk/Milk_Cheese" />
+      <nodes>
+        <classShapeMoniker Id="11659855-6107-4984-bf52-688b1e444d33" />
+        <classShapeMoniker Id="c20b402b-3a01-4755-b11d-3010a5b89468" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

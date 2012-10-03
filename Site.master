@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 17%;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <table width="100%">
+                <tr align="center" valign="top">
+                <td width="50%">
+                    <h1>
+                    ASP.NET ITM 564 CLASS
+                    </h1>
+                </td>
+                <td></td>
+                <td width="80%" align="right">
+                    <h3 align="right" style="color:white; font-style:italic"><asp:label id="todayDate" runat="server" /></h3>
+
+                </td>
+                </tr>
+                </table>
+            </div>
+            <div class="loginDisplay">
+            <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+            <AnonymousTemplate>
+                [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+            [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+            </LoggedInTemplate>
+            </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+            <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu"
+            EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal"
+            staticdisplaylevels="1" staticsubmenuindent="10" >
+                <Items>
+                    <asp:menuitem navigateurl="Default.aspx"
+                    text="Assigments"
+                    tooltip="Assigments">
+                        <asp:menuitem navigateurl="~/Assigments/assigment1.aspx"
+                        text="Assigment 1"
+                        tooltip="Assigment 1" />
+            
+                        <asp:menuitem navigateurl="~/Assigments/assigment2.aspx"
+                        text="Assigment 2"
+                        tooltip="Assigment 2" />
+            
+                        <asp:menuitem navigateurl="~/Default.aspx"
+                        text="Assigment 3"
+                        tooltip="Assigment 3" >
+                                    <asp:menuitem navigateurl="~/Assigment3/part1.aspx"
+                                    text="Create new User Using ADO"
+                                    tooltip="Part 1" />
+                                    <asp:menuitem navigateurl="~/Assigment3/part2.aspx"
+                                    text="Login Using ADO"
+                                    tooltip="Part 2" />
+                                    <asp:menuitem navigateurl="~/Assigment3/part3.aspx"
+                                    text="Create new User Using Entity Framework"
+                                    tooltip="Part 3" />
+                                    <asp:menuitem navigateurl="~/Assigment3/part4.aspx"
+                                    text="Login Using Entity Framework"
+                                    tooltip="Part 4" />
+                        </asp:menuitem>
+                        <asp:menuitem navigateurl="~/Default.aspx"
+                        text="Assigment 4"
+                        tooltip="Assigment 4" >
+                                    <asp:menuitem navigateurl="~/Assigment4/Page1.aspx"
+                                    text="Login using SQL MembershipProvider"
+                                    tooltip="Part 1" />
+                                    <asp:menuitem navigateurl="~/Assigment4/Page2.aspx"
+                                    text="Create User with Wizard Steps"
+                                    tooltip="Part 2" />
+                                    <asp:menuitem navigateurl="~/Assigment4/Page3.aspx"
+                                    text="Reset Password"
+                                    tooltip="Part 3" />
+                                    <asp:menuitem navigateurl="~/WebSiteSingleMemberShipProvider/Login.aspx"
+                                    text="Web Site Single Member Ship Provider"
+                                    tooltip="Part 4" />
+                        </asp:menuitem>
+                        <asp:menuitem navigateurl="~/Default.aspx"
+                        text="Assigment 5"
+                        tooltip="Assigment 5" >
+                                    <asp:menuitem navigateurl="~/Assigment5/Part2.aspx"
+                                    text="Logon Page"
+                                    tooltip="Part 1" />
+                                    <asp:menuitem navigateurl="~/Assigment5/Part1.aspx"
+                                    text="Add/remove roles for users"
+                                    tooltip="Part 2" />
+
+                        </asp:menuitem>
+
+                        <asp:menuitem navigateurl="~/Assigments/Assigment6.aspx"
+                        text="Assigment 6"
+                        tooltip="Assigment 6" />
+
+                        <asp:menuitem navigateurl="~/Assigments/Assigment7.aspx"
+                        text="Assigment 7"
+                        tooltip="Assigment 7" />
+
+                    </asp:menuitem>
+                    <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="About Page"/>
+                    <asp:MenuItem NavigateUrl="~/Autor.aspx" Text="About Me" />
+
+                </Items>
+            </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+               <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
